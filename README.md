@@ -28,7 +28,7 @@ docker-compose build && docker-compose up -d
 1. No Kitematic  
     Em "app" e "webserver": Ir em Settings->Volumes e trocar o LOCAL FOLDER para a pasta com o novo projeto  
     Em "db": modifique o nome do banco de dados e a senha  
-1. Certifique-se de que o .env esteja com os nomes corretos:  
+2. Certifique-se de que o .env esteja com os nomes corretos:  
     ```nano .env```
     DB_CONNECTION=mysql  
     DB_HOST=db  
@@ -36,28 +36,28 @@ docker-compose build && docker-compose up -d
     DB_DATABASE=teste  
     DB_USERNAME=root  
     DB_PASSWORD=root  
-1. Na pasta do seu projeto laravel, adicionar no ../AppServiceProvider:  
+3. Na pasta do seu projeto laravel, adicionar no ../AppServiceProvider:  
 ```
 use Illuminate\Support\Facades\Schema;
 Schema::defaultStringLength(191); //NEW: Increase StringLength
 ```
-1. Na pasta onde esta o arquivo docker-file.yml entre nos container usando:  
+4. Na pasta onde esta o arquivo docker-file.yml entre nos container usando:  
 ```docker exec -itu root -w / app bash```
-1. Certifique-se de ir ao caminho correto:  
+5. Certifique-se de ir ao caminho correto:  
 ```cd var/www/(nome_da_nova_pasta)```
-1. use os comandos:  
+6. use os comandos:  
 ```
 php artisan cache:clear
 php artisan config:cache
 ```
-1.  Se houver a mensagem do composer como root instale ou atualize as dependencias com os comandos
+7.  Se houver a mensagem do composer como root instale ou atualize as dependencias com os comandos
 ```
 composer install --no-plugins --no-scripts ...
 composer update --no-plugins --no-scripts ...
 ```
-1. Faça a migration:
+8. Faça a migration:
 ```php artisan migrate```
-1. Para o front do quasar:  
+9. Para o front do quasar:  
   https://medium.com/@jwdobken/develop-quasar-applications-with-docker-a19c38d4a6ac  
-1. Para problemas na hora de salvar o arquivo:  
+10. Para problemas na hora de salvar o arquivo:  
   ```sudo chown -hR meuusuario minhapasta/``` da a permissão para o meu usuário alterar a pasta que quero
