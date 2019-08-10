@@ -45,10 +45,12 @@ Schema::defaultStringLength(191); //NEW: Increase StringLength
     ```cd var/www/(nome_da_nova_pasta)```
 1. use os comandos:
     ```php artisan cache:clear
-    php artisan config:cache```
+    php artisan config:cache
+    ```
 1.  Se houver a mensagem do composer como root instale ou atualize as dependencias com os comandos
     ```composer install --no-plugins --no-scripts ...
-    composer update --no-plugins --no-scripts ...```
+    composer update --no-plugins --no-scripts ...
+    ```
 1. Faça a migration:
     ```php artisan migrate```
 1. Para o front do quasar:
