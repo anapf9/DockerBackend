@@ -40,19 +40,21 @@ docker-compose build && docker-compose up -d
 use Illuminate\Support\Facades\Schema;
 Schema::defaultStringLength(191); //NEW: Increase StringLength
 1. Na pasta onde esta o arquivo docker-file.yml entre nos container usando:
-    ```docker exec -itu root -w / app bash```
+```docker exec -itu root -w / app bash```
 1. Certifique-se de ir ao caminho correto:
-    ```cd var/www/(nome_da_nova_pasta)```
+```cd var/www/(nome_da_nova_pasta)```
 1. use os comandos:
-    ```php artisan cache:clear
-    php artisan config:cache
-    ```
+```
+php artisan cache:clear
+php artisan config:cache
+```
 1.  Se houver a mensagem do composer como root instale ou atualize as dependencias com os comandos
-    ```composer install --no-plugins --no-scripts ...
-    composer update --no-plugins --no-scripts ...
-    ```
+```
+composer install --no-plugins --no-scripts ...
+composer update --no-plugins --no-scripts ...
+```
 1. Faça a migration:
-    ```php artisan migrate```
+```php artisan migrate```
 1. Para o front do quasar:
   https://medium.com/@jwdobken/develop-quasar-applications-with-docker-a19c38d4a6ac
 1. Para problemas na hora de salvar o arquivo:
